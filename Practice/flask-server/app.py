@@ -536,7 +536,7 @@ def handle_activity():
             if not user_id:
                 return jsonify({"error": "Missing user_id parameter"}), 400
 
-            # Валидация параметров
+            
             try:
                 user_id = int(user_id)
                 year = request.args.get('year')
@@ -578,7 +578,7 @@ def handle_activity():
             if not data:
                 return jsonify({"error": "No data provided"}), 400
 
-            # Валидация
+            
             required_fields = ['user_id', 'days']
             if not all(field in data for field in required_fields):
                 return jsonify({"error": f"Missing required fields: {required_fields}"}), 400
